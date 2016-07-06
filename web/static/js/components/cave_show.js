@@ -16,9 +16,7 @@ export default class CaveShow extends React.Component {
     return (
       <div>
         <h2>{cave.name}</h2>
-        <svg>
-          <circle cx={50} cy={50} r={10} fill="red" />
-        </svg>
+        <div dangerouslySetInnerHTML={{__html: cave.svg}} />
       </div>
     );
   }
