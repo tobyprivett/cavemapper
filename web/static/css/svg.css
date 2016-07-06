@@ -1,4 +1,9 @@
+svg {
+  overflow: visible !important;
+  margin-top: 200px;
+}
 polyline {
+  fill: none !important;
   stroke: red !important;
   stroke-width: 1 !important;
 }
