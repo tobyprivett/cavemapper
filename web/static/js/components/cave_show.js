@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { fetchCave } from '../actions/index';
+import Svg from './svg/svg'
 
 export default class CaveShow extends React.Component {
   componentWillMount() {
@@ -16,7 +17,7 @@ export default class CaveShow extends React.Component {
     return (
       <div>
         <h2>{cave.name}</h2>
-        <div dangerouslySetInnerHTML={{__html: cave.svg}} />
+        <Svg cave={this.props.cave} />
       </div>
     );
   }
