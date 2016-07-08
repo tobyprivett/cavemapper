@@ -17,8 +17,10 @@ export default class Svg extends React.Component {
     const cave = this.props.cave
     const surveys = cave.surveys || []
     return (
-      <svg>
-        {this.renderPolylines(surveys)}
+      <svg viewBox="0 0 1200 1200">
+          <g transform="translate(100, 300) rotate(-90)">
+          {this.renderPolylines(surveys)}
+          </g>
       </svg>
     )
   }
