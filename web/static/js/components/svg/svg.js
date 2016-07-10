@@ -5,9 +5,9 @@ export default class Svg extends React.Component {
   // and draw a polyline for each survey
   renderPolylines(surveys) {
     return surveys.map((survey) => {
-        const points = survey.points || []
+        const points = survey.svg_polyline_points || []
         return(
-          <polyline key={survey.key} points={points.join(" ")} />
+          <polyline key={survey.key} points={points} />
         )
       }
     )

@@ -6,6 +6,7 @@ export default function(state = INITIAL_STATE, action) {
 
   switch(action.type) {
     case FETCH_CAVE:
+      console.log(action.payload)
       return Object.assign({}, state, {
         cave: action.payload.data.cave
       })
