@@ -1,6 +1,8 @@
 #map-container {
+  margin-top: 20px;
   border: 1px solid black;
-  width: 400px;
-  height: 400px;
-  padding: 0px !important;
+  height: 600px;
+  padding: 20px !important;
+  text-align: center;
+  background-color: black;
 }
