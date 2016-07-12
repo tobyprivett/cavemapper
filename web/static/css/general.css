@@ -1,8 +1,10 @@
 #map-container {
-  margin-top: 20px;
   border: 1px solid black;
-  height: 600px;
   padding: 20px !important;
   text-align: center;
   background-color: black;
+}
+
+.draggable {
+  cursor: move;
 }
