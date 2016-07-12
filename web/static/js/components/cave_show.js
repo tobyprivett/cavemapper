@@ -17,7 +17,9 @@ export default class CaveShow extends React.Component {
     return (
       <div>
         <h2>{cave.name}</h2>
-        <Svg cave={this.props.cave} />
+        <div id="map-container">
+          <Svg cave={this.props.cave} />
+        </div>
       </div>
     );
   }

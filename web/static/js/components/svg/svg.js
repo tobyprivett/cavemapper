@@ -7,7 +7,7 @@ export default class Svg extends React.Component {
     return surveys.map((survey) => {
         const points = survey.svg_polyline_points || []
         return(
-          <polyline key={survey.key} points={points} />
+          <polyline id={survey.key} key={survey.key} points={points} />
         )
       }
     )
@@ -17,10 +17,8 @@ export default class Svg extends React.Component {
     const cave = this.props.cave
     const surveys = cave.surveys || []
     return (
-      <svg viewBox="0 0 1200 1200">
-          <g transform="translate(100, 300) rotate(-90)">
-          {this.renderPolylines(surveys)}
-          </g>
+      <svg>
+        {this.renderPolylines(surveys)}
       </svg>
     )
   }
