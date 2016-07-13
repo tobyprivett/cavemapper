@@ -16,7 +16,7 @@ export default class Surveys extends React.Component {
   render() {
     const surveys = this.props.surveys
     return (
-      <g>
+      <g id="surveys">
         {this.renderSurveys(surveys)}
       </g>
     )

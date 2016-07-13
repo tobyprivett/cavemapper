@@ -15,7 +15,7 @@ export default class Stations extends React.Component {
   render() {
     const stations = this.props.stations
     return (
-      <g>
+      <g id="stations">
         {this.renderStations(stations)}
       </g>
     )
