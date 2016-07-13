@@ -1,5 +1,6 @@
 import React from 'react'
 import Surveys from './surveys'
+import Stations from './stations'
 import svgPanZoom from 'svg-pan-zoom'
 
 export default class Svg extends React.Component {
@@ -29,6 +30,8 @@ export default class Svg extends React.Component {
 
   render() {
     const cave = this.props.cave
+    const surveys = cave.surveys
+    const stations = cave.stations
     return (
       <div>
         <div className="btn-group">
@@ -44,7 +47,8 @@ export default class Svg extends React.Component {
         </div>
         <div id="map-container">
           <svg key={cave.id}>
-            <Surveys surveys={cave.surveys} />
+            <Surveys surveys={surveys} />
+            <Stations stations={stations} />
           </svg>
         </div>
       </div>
