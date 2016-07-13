@@ -17,6 +17,7 @@
     "react-router": "^2.5.2",
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",
+    "svg-pan-zoom": "^3.2.9",
     "uglify-js-brunch": "~2.0.1"
   }
 }

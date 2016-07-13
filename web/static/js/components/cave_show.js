@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { fetchCave } from '../actions/index';
-import Svg from './svg/svg'
+import CaveMap from './cave_map'
 
 export default class CaveShow extends React.Component {
   componentWillMount() {
@@ -11,13 +11,15 @@ export default class CaveShow extends React.Component {
   render() {
     const cave = this.props.cave;
 
-    if (!cave) {
+    // that the Map component is not rendered until the
+    // ajax call has returned some surveys
+    if (!cave.surveys) {
       return <div>Loading...</div>
     }
     return (
       <div>
         <h2>{cave.name}</h2>
-        <Svg cave={this.props.cave} />
+        <CaveMap cave={this.props.cave} map_type="svg" />
       </div>
     );
   }
