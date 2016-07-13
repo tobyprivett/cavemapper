@@ -1,5 +1,5 @@
 import React from 'react'
-import Polyline from './polyline'
+import Surveys from './surveys'
 import svgPanZoom from 'svg-pan-zoom'
 
 export default class Svg extends React.Component {
@@ -27,20 +27,8 @@ export default class Svg extends React.Component {
     this.zoomer.destroy()
   }
 
-  renderPolylines(surveys) {
-    return surveys.map((survey) => {
-        const points = survey.svg_polyline_points || []
-        return(
-          <Polyline points={points} key={survey.key} survey={survey}/>
-        )
-      }
-    )
-  }
-
-
   render() {
     const cave = this.props.cave
-    const surveys = cave.surveys
     return (
       <div>
         <div className="btn-group">
@@ -56,7 +44,7 @@ export default class Svg extends React.Component {
         </div>
         <div id="map-container">
           <svg key={cave.id}>
-            {this.renderPolylines(surveys)}
+            <Surveys surveys={cave.surveys} />
           </svg>
         </div>
       </div>

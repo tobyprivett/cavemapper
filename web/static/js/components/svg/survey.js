@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Polyline extends React.Component {
+export default class Survey extends React.Component {
 
   render() {
     return (
@@ -11,6 +11,3 @@ export default class Polyline extends React.Component {
     )
   }
 }
-
-
-
