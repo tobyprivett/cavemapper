@@ -12,8 +12,7 @@ export default class Station extends React.Component {
     return (
       <OverlayTrigger
         placement="top"
-        overlay={<StationInfo
-        station={station} />}>
+        overlay={<StationInfo station={station} />}>
         <rect
           key={station.name}
           className=" overlay-trigger station-name"

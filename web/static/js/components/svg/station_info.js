@@ -9,7 +9,7 @@ export default class StationInfo extends Component {
       <Tooltip>
         {station.name}
         <p>
-          Distance: {station.entrance_distance}<br/>
+          Entry Distance: {station.entrance_distance}<br />
           Depth: {station.depth}
         </p>
       </Tooltip>
