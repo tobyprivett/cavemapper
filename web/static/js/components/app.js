@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 export default React.createClass({
   render() {
     return (
-      <div className="container">
+      <div>
         <header className="header">
           <nav role="navigation">
             <ul className="nav nav-pills pull-right">
