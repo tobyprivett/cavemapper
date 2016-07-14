@@ -3,7 +3,7 @@ svg {
   height: 800px;
 }
 
-polyline {
+line {
   fill: none !important;
   stroke: red !important;
   stroke-width: 1 !important;

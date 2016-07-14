@@ -5,12 +5,10 @@ export default class Surveys extends React.Component {
 
   renderSurveys(surveys) {
     return surveys.map((survey) => {
-        const points = survey.svg_polyline_points || []
-        return(
-          <Survey points={points} key={survey.id} survey={survey}/>
-        )
-      }
-    )
+      return(
+        <Survey key={survey.id} survey={survey}/>
+      )
+    })
   }
 
   render() {
