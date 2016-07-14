@@ -10,9 +10,6 @@ export default class CaveShow extends React.Component {
 
   render() {
     const cave = this.props.cave;
-
-    // that the Map component is not rendered until the
-    // ajax call has returned some surveys
     if (!cave.surveys) {
       return <div>Loading...</div>
     }
