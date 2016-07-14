@@ -14,8 +14,11 @@ export default class Stations extends React.Component {
 
   render() {
     const stations = this.props.stations
+    if (!this.props.visible) {
+      return (<g key="g_stations"></g>)
+    }
     return (
-      <g id="stations">
+      <g key="g_stations">
         {this.renderStations(stations)}
       </g>
     )
