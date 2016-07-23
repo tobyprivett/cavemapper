@@ -19,7 +19,7 @@ defmodule Cavemapper.Router do
     resources "/caves", Browser.CaveController do
       resources "/surveys", Browser.SurveyController
     end
-    get "/", Browser.CaveController, :index
+    get "/", PageController, :index
   end
 
   scope "/api/v1", Cavemapper, as: :api do
