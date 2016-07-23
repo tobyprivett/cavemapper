@@ -44,8 +44,7 @@ defmodule Cavemapper.Mixfile do
       {:chronos, "~> 1.7.0"},
       {:ex_machina, "~> 0.6.1"},
       {:geo, "~> 1.0"},
-      {:credo, "~> 0.4", only: [:dev, :test]},
-      {:corsica, "~> 0.5.0"}
+      {:credo, "~> 0.4", only: [:dev, :test]}
     ]
   end
 
