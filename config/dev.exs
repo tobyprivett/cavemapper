@@ -11,7 +11,8 @@ config :cavemapper, Cavemapper.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+               cd: Path.expand("../", __DIR__)]]
 
 # Watch static and templates for browser reloading.
 config :cavemapper, Cavemapper.Endpoint,
@@ -31,3 +32,14 @@ config :logger, :console, format: "[$level] $message\n"
 # Do not configure such in production as keeping
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
+
+# Configure your database
+config :cavemapper, Cavemapper.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "toby",
+  password: "",
+  database: "cavemapper_dev",
+  hostname: "localhost",
+  pool_size: 10,
+  extensions: [{Geo.PostGIS.Extension, library: Geo}]
+

@@ -5,3 +5,11 @@ use Mix.Config
 # your version control system.
 config :cavemapper, Cavemapper.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+# Configure your database
+config :cavemapper, Cavemapper.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 20,
+  extensions: [{Geo.PostGIS.Extension, library: Geo}]
+

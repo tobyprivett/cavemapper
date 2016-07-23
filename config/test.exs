@@ -8,3 +8,13 @@ config :cavemapper, Cavemapper.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure your database
+config :cavemapper, Cavemapper.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "toby",
+  password: "",
+  database: "cavemapper_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  extensions: [{Geo.PostGIS.Extension, library: Geo}]

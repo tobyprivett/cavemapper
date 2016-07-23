@@ -16,11 +16,14 @@ defmodule Cavemapper.Router do
   scope "/", Cavemapper do
     pipe_through :browser # Use the default browser stack
 
+    resources "/caves", Browser.CaveController do
+      resources "/surveys", Browser.SurveyController
+    end
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Cavemapper do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", Cavemapper, as: :api do
+    resources "/caves", Api.CaveController, except: [:new, :edit]
+    resources "/svg", Api.SvgController, only: [:show]
+  end
 end
