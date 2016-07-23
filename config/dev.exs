@@ -42,8 +42,3 @@ config :cavemapper, Cavemapper.Repo,
   pool_size: 10,
   extensions: [{Geo.PostGIS.Extension, library: Geo}]
 
-config :cavemapper, :basic_auth, [
-  realm: "Under Construction!",
-  username: "admin",
-  password: "admin"
-]
