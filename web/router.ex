@@ -7,6 +7,9 @@ defmodule Cavemapper.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    if Mix.env != :test do
+      plug BasicAuth, Application.get_env(:Cavemapper, :basic_auth)
+    end
   end
 
   pipeline :api do
@@ -16,11 +19,14 @@ defmodule Cavemapper.Router do
   scope "/", Cavemapper do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    resources "/caves", Browser.CaveController do
+      resources "/surveys", Browser.SurveyController
+    end
+    get "/", Browser.CaveController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Cavemapper do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", Cavemapper, as: :api do
+    resources "/caves", Api.CaveController, except: [:new, :edit]
+    resources "/svg", Api.SvgController, only: [:show]
+  end
 end

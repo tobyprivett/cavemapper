@@ -1,4 +1,4 @@
-defmodule CompassIO.DatFile.Survey do
+defmodule Cavemapper.DatFile.Survey do
   defstruct name: "", survey_date: "", comment: "", team: "", shots: []
 
   def tie_in(survey) do

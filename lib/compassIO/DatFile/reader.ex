@@ -1,6 +1,6 @@
-defmodule CompassIO.DatFile.Reader do
+defmodule Cavemapper.DatFile.Reader do
 
-  alias CompassIO.DatFile
+  alias Cavemapper.DatFile
 
   @doc """
   Read a Compass Cave Survey .dat file and build a struct containing
@@ -10,9 +10,9 @@ defmodule CompassIO.DatFile.Reader do
 
   ## Example:
       iex> filename = "test/support/Linea\ Dorada.dat"
-      iex> CompassIO.Reader.read(filename)
+      iex> Cavemapper.Reader.read(filename)
       "{:ok,
-        %CompassIO.Cave{name: "Linea Dorada"}..."
+        %Cavemapper.Cave{name: "Linea Dorada"}..."
   """
   def read(filename) do
     case File.read(filename) do

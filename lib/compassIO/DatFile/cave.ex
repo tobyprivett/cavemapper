@@ -1,4 +1,4 @@
-defmodule CompassIO.DatFile.Cave do
+defmodule Cavemapper.DatFile.Cave do
   defstruct name: "", surveys: []
 
   def station_start(cave) do
@@ -8,7 +8,7 @@ defmodule CompassIO.DatFile.Cave do
 
   def name(cave_struct) do
     # check if the name exists
-    existing_cave = CompassIO.Repo.get_by(CompassIO.Cave, name: cave_struct.name)
+    existing_cave = Cavemapper.Repo.get_by(Cavemapper.Cave, name: cave_struct.name)
 
     ret =
     if existing_cave do

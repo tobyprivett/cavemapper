@@ -1,23 +1,23 @@
-defmodule CompassIO.DatFile.Parser do
-  alias CompassIO.DatFile.Cave
-  alias CompassIO.DatFile.Survey
-  alias CompassIO.DatFile.Shot
+defmodule Cavemapper.DatFile.Parser do
+  alias Cavemapper.DatFile.Cave
+  alias Cavemapper.DatFile.Survey
+  alias Cavemapper.DatFile.Shot
 
   @doc """
-  Takes a filename and returns a CompassIO.Cave, by calling
-  CompassIO.DatFile.Reader.read(filename) and converts that
-  output to a CompassIO.Cave
+  Takes a filename and returns a Cavemapper.Cave, by calling
+  Cavemapper.DatFile.Reader.read(filename) and converts that
+  output to a Cavemapper.Cave
 
   ## Example:
       iex> filename = "test/support/Linea\ Dorada.dat"
-      iex> CompassIO.DatFile.Parser.read(filename)
+      iex> Cavemapper.DatFile.Parser.read(filename)
       "{name: "Linea Dorada", surveys: []}..."
   """
 
   def parse(filename) do
-    {:ok, cave_struct} = CompassIO.DatFile.Reader.read(filename)
+    {:ok, cave_struct} = Cavemapper.DatFile.Reader.read(filename)
 
-    %CompassIO.Cave{
+    %Cavemapper.Cave{
       name: Cave.name(cave_struct),
       station_start: Cave.station_start(cave_struct),
       surveys: Enum.map(cave_struct.surveys, &parse_survey(&1))
@@ -25,7 +25,7 @@ defmodule CompassIO.DatFile.Parser do
   end
 
   defp parse_survey(survey_struct) do
-    %CompassIO.Survey{
+    %Cavemapper.Survey{
       name: survey_struct.name,
       survey_date: Ecto.Date.cast!(survey_struct.survey_date),
       team: survey_struct.team,
@@ -37,7 +37,7 @@ defmodule CompassIO.DatFile.Parser do
   end
 
   defp parse_shot(shot_struct) do
-    %CompassIO.Shot{
+    %Cavemapper.Shot{
       station_from: Shot.from_station(shot_struct),
       inclination: Shot.inclination(shot_struct),
       depth_change: Shot.depth_change(shot_struct),

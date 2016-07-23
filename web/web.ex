@@ -18,13 +18,21 @@ defmodule Cavemapper.Web do
 
   def model do
     quote do
-      # Define common model functionality
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
+
+      alias Cavemapper.Repo
+      import Ecto
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import Cavemapper.Router.Helpers
       import Cavemapper.Gettext
@@ -56,6 +64,10 @@ defmodule Cavemapper.Web do
   def channel do
     quote do
       use Phoenix.Channel
+
+      alias Cavemapper.Repo
+      import Ecto
+      import Ecto.Query, only: [from: 1, from: 2]
       import Cavemapper.Gettext
     end
   end
