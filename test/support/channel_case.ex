@@ -27,7 +27,7 @@ defmodule Cavemapper.ChannelCase do
   end
 
   setup tags do
-
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Cavemapper.Repo)
     :ok
   end
 end
