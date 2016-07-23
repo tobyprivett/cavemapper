@@ -27,7 +27,7 @@ defmodule Cavemapper.SvgBuilderTest do
   end
 
   test "setting the station#svg_point" do
-    cave = SvgBuilder.run(cave)
+    SvgBuilder.run(cave)
     station = Repo.get_by(Station, %{name: "LIPRI14"})
     assert station.svg_point ==  "116.88884056609905,245.58805884632432"
   end
