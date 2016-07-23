@@ -31,21 +31,22 @@ defmodule Cavemapper.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.4"},
-     {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.4"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:phoenix_ecto, "~> 3.0"},
-     {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}],
-     {:earmark, "~> 0.1"},
-     {:ex_doc, "~> 0.11"},
-     {:chronos, "~> 1.5.1"},
-     {:ex_machina, "~> 0.6.1"},
-     {:geo, "~> 1.0"},
-     {:credo, "~> 0.4", only: [:dev, :test]},
-     {:basic_auth, ">= 0.0.1"},
-     {:corsica, "~> 0.5.0"}
+    [
+      {:phoenix, "~> 1.1.4"},
+      {:postgrex, ">= 0.0.0"},
+      {:phoenix_html, "~> 2.4"},
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:phoenix_ecto, "~> 3.0"},
+      {:gettext, "~> 0.9"},
+      {:cowboy, "~> 1.0"},
+      {:earmark, "~> 0.1"},
+      {:ex_doc, "~> 0.11"},
+      {:chronos, "~> 1.5.1"},
+      {:ex_machina, "~> 0.6.1"},
+      {:geo, "~> 1.0"},
+      {:credo, "~> 0.4", only: [:dev, :test]},
+      {:basic_auth, ">= 0.0.1"},
+      {:corsica, "~> 0.5.0"}
     ]
   end
 
