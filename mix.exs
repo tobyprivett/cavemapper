@@ -19,8 +19,7 @@ defmodule Cavemapper.Mixfile do
   def application do
     [mod: {Cavemapper, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :earmark, :ex_doc, :chronos,
-                    :ex_machina, :geo]]
+                    :phoenix_ecto, :postgrex,:chronos, :ex_machina, :geo]]
   end
 
   # Specifies which paths to compile per environment.
@@ -32,15 +31,13 @@ defmodule Cavemapper.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.1.4"},
+      {:phoenix, "~> 1.2.0"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 2.4"},
+      {:phoenix_html, "~> 2.6.2"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:phoenix_ecto, "~> 3.0"},
       {:gettext, "~> 0.9"},
       {:cowboy, "~> 1.0"},
-      {:earmark, "~> 0.1"},
-      {:ex_doc, "~> 0.11"},
       {:chronos, "~> 1.7.0"},
       {:ex_machina, "~> 0.6.1"},
       {:geo, "~> 1.0"},
