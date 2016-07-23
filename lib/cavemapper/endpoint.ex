@@ -35,5 +35,6 @@ defmodule Cavemapper.Endpoint do
     key: "_cavemapper_key",
     signing_salt: "YwaGAvHo"
 
+  plug Corsica, origins: ["http://localhost:4000", "http://cavemapper.com"]
   plug Cavemapper.Router
 end
