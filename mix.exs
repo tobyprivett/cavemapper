@@ -41,7 +41,7 @@ defmodule Cavemapper.Mixfile do
       {:cowboy, "~> 1.0"},
       {:earmark, "~> 0.1"},
       {:ex_doc, "~> 0.11"},
-      {:chronos, "~> 1.5.1"},
+      {:chronos, "~> 1.7.0"},
       {:ex_machina, "~> 0.6.1"},
       {:geo, "~> 1.0"},
       {:credo, "~> 0.4", only: [:dev, :test]},
