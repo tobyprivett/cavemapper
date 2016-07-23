@@ -31,3 +31,19 @@ config :logger, :console, format: "[$level] $message\n"
 # Do not configure such in production as keeping
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
+
+# Configure your database
+config :cavemapper, Cavemapper.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "toby",
+  password: "",
+  database: "cavemapper_dev",
+  hostname: "localhost",
+  pool_size: 10,
+  extensions: [{Geo.PostGIS.Extension, library: Geo}]
+
+config :cavemapper, :basic_auth, [
+  realm: "Under Construction!",
+  username: "admin",
+  password: "admin"
+]
