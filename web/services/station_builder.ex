@@ -22,8 +22,7 @@ defmodule Cavemapper.StationBuilder do
     tie_in = load_tie_in(cave, head)
     if is_nil(tie_in) do
       # move this survey to the end of the list and get the next one
-      [_head | tail] = tail ++ [head]
-      process_surveys(cave, tail)
+      process_surveys(cave, tail ++ [head])
     else
       shots = Repo.all(from s in Shot, where: s.survey_id == ^head.id, order_by: s.id)
       build_stations(shots, head, tie_in)
