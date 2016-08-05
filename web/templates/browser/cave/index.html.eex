@@ -1,4 +1,4 @@
-<h2>Listing caves</h2>
+<h2>Edit caves</h2>
 
 <table class="table">
   <thead>
@@ -11,7 +11,7 @@
   <tbody>
 <%= for cave <- @caves do %>
     <tr>
-      <td><%= link cave.name, to: cave_path(@conn, :show, cave) %></td>
+      <td><%= cave.name %></td>
       <td class="text-right">
 
         <%= link "Edit", to: cave_path(@conn, :edit, cave), class: "btn btn-default btn-xs" %>
@@ -22,3 +22,5 @@
   </tbody>
 </table>
 
+<%= link "Cave Maps", to: "/" %> |
+<%= link "New cave", to: "/caves/new" %>

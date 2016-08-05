@@ -25,7 +25,7 @@ class CaveIndex extends React.Component {
 
     return (
       <div>
-        <h2>My Caves</h2>
+        <h2>Cave Maps</h2>
         <ul className="list-group">
         {caves.map(this.renderCave)}
         </ul>

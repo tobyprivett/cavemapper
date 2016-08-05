@@ -8,8 +8,9 @@ export default React.createClass({
         <header className="header">
           <nav role="navigation">
             <ul className="nav nav-pills pull-right">
-              <li><Link to='/caves/'>My Caves</Link></li>
-              <li><Link to='/caves/new'>New Cave</Link></li>
+              <li><Link to='/caves/'>Cave Maps</Link></li>
+              <li><a href='/caves/new'>New Cave</a></li>
+              <li><a href='/caves'>Edit Caves</a></li>
             </ul>
           </nav>
         </header>

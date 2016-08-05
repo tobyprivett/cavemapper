@@ -31,7 +31,7 @@ defmodule Cavemapper.Browser.CaveController do
       {:ok, cave} ->
         conn
         |> put_flash(:info, "Cave created successfully.")
-        |> redirect(to: cave_path(conn, :show, cave))
+        |> redirect(to: "/")
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

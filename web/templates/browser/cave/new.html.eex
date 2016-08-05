@@ -28,4 +28,5 @@
 <% end %>
 
 
-<%= link "Back", to: cave_path(@conn, :index) %>
+<%= link "Cave Maps", to: "/" %> |
+<%= link "Edit Caves", to: "/caves" %>

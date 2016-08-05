@@ -10,7 +10,6 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import reducers from './reducers';
 import App from './components/app'
 import CaveShow from "./components/cave_show";
-import CaveNew from "./components/cave_new";
 import CaveIndex from "./components/cave_index";
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -25,7 +24,6 @@ if (map_container) {
 
         <IndexRoute component={CaveIndex} />
 
-        <Route path="/caves/new" component={CaveNew} />
         <Route path="/caves/:cave_id" component={CaveShow} />
         <Route path="/caves/" component={CaveIndex} />
 
